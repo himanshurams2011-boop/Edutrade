@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduCycle – Reuse. Resell. Relearn.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+    }
+
+    header {
+      background: #0b3c5d;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: #f9c80e;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: #0b3c5d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #ddd;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>EduCycle</h2>
+  <p>Reuse. Resell. Relearn.</p>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('buy')">Buy</button>
+  <button onclick="showPage('sell')">Sell</button>
+  <button onclick="showPage('admin')">Admin</button>
+</nav>
+
+<div class="container">
+
+  <!-- HOME -->
+  <div id="home" class="card">
+    <h3>Welcome to EduCycle</h3>
+    <p>Buy & sell NCERT books and Class 8–12 notes at affordable prices.</p>
+    <p>Secure | Student-friendly | Reusable education</p>
+  </div>
+
+  <!-- BUY -->
+  <div id="buy" class="card hidden">
+    <h3>Available Books & Notes</h3>
+
+    <div class="card">
+      <b>Class 10 Science Notes</b><br>
+      Price: ₹99<br>
+      ⭐⭐⭐⭐⭐
+    </div>
+
+    <div class="card">
+      <b>Class 12 Physics NCERT</b><br>
+      Price: ₹250<br>
+      ⭐⭐⭐⭐
+    </div>
+
+    <button onclick="alert('Payment feature coming soon')">Buy Now</button>
+  </div>
+
+  <!-- SELL -->
+  <div id="sell" class="card hidden">
+    <h3>Sell Books / Notes</h3>
+
+    <input type="text" placeholder="Your Name">
+    <select>
+      <option>Class 8</option>
+      <option>Class 9</option>
+      <option>Class 10</option>
+      <option>Class 11</option>
+      <option>Class 12</option>
+    </select>
+
+    <input type="text" placeholder="Book / Notes Title">
+    <textarea placeholder="Description"></textarea>
+    <input type="number" placeholder="Price (₹)">
+    <button onclick="alert('Submitted for admin approval')">Submit</button>
+  </div>
+
+  <!-- ADMIN -->
+  <div id="admin" class="card hidden">
+    <h3>Admin Panel</h3>
+    <p>Approve or Reject Listings</p>
+
+    <div class="card">
+      <b>Class 9 Maths Notes</b><br>
+      Price: ₹80<br><br>
+      <button onclick="alert('Approved')">Approve</button>
+      <button onclick="alert('Rejected')">Reject</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 EduCycle | Web First Platform
+</footer>
+
+<script>
+  function showPage(page) {
+    document.getElementById('home').classList.add('hidden');
+    document.getElementById('buy').classList.add('hidden');
+    document.getElementById('sell').classList.add('hidden');
+    document.getElementById('admin').classList.add('hidden');
+    document.getElementById(page).classList.remove('hidden');
+  }
+</script>
+
+</body>
+</html>
